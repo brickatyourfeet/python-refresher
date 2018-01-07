@@ -24,7 +24,12 @@ known_people = ['John', 'Anna', 'Mary']
 def who_do_you_know():
     people = input('who do you know? separate by commas')
     people_list = people.split(',')
-    return people_list
+
+    people_without_spaces = []
+    for person in people_list:
+        people_without_spaces.append(person.strip())
+
+    return people_without_spaces
 
 def ask_user():
     person = input('enter a name of someone you know: ')
@@ -32,6 +37,10 @@ def ask_user():
         print('you know {}!'.format(person))
 
 ask_user()
+
+
+
+
 
 
 
